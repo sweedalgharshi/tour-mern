@@ -15,6 +15,7 @@ import FeaturedTourList from "../components/Featured-tour/FeaturedTourList";
 
 import MasonryImageGallery from "../components/image-gallery/MasonryImageGallery";
 import Testimonials from "../components/testimonials/Testimonials";
+import Newsletter from "../shared/Newsletter";
 
 function Home() {
   return (
@@ -162,6 +163,10 @@ function Home() {
         </Container>
       </section>
       {/* ======== Testimonials Section END */}
+
+      {/* ======== NewsLetter Section START */}
+      <Newsletter />
+      {/* ======== NewsLetter Section END */}
     </>
   );
 }
