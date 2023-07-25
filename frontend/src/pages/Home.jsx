@@ -6,6 +6,8 @@ import worldImg from "../assets/images/world.png";
 import heroImg from "../assets/images/hero-img01.jpg";
 import heroImg02 from "../assets/images/hero-img02.jpg";
 import heroVideo from "../assets/images/hero-video.mp4";
+import experienceImg from "../assets/images/experience.png";
+
 import Subtitle from "../shared/Subtitle";
 import SearchBar from "../shared/SearchBar";
 import ServiceList from "../services/ServiceList";
@@ -58,7 +60,6 @@ function Home() {
       {/* ======== Hero Section END */}
 
       {/* ======== Service Section START */}
-      {/* ======== Service Section END */}
       <section>
         <Container>
           <Row>
@@ -70,6 +71,7 @@ function Home() {
           </Row>
         </Container>
       </section>
+      {/* ======== Service Section END */}
 
       {/* ======== Featured tour Section START */}
       <section>
@@ -84,6 +86,46 @@ function Home() {
         </Container>
       </section>
       {/* ======== Featured tour Section END */}
+
+      {/* ======== Experience Section START */}
+      <section>
+        <Container>
+          <Row>
+            <Col lg="6">
+              <div className="experience__content">
+                <Subtitle subtitle={"Experience"} />
+                <h2>With our all experience we will serve you</h2>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  <br />
+                  Cumque quibusdam omnis, eos sunt ut debitis.
+                </p>
+              </div>
+
+              <div className="counter__wrapper d-flex align-items-center gap-5">
+                <div className="counter__box">
+                  <span>12k+</span>
+                  <h6>Successful Trip</h6>
+                </div>
+                <div className="counter__box">
+                  <span>2k+</span>
+                  <h6>Regular Client</h6>
+                </div>
+                <div className="counter__box">
+                  <span>15</span>
+                  <h6>Years of experience</h6>
+                </div>
+              </div>
+            </Col>
+            <Col lg="6">
+              <div className="experience__img">
+                <img src={experienceImg} alt="" />
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+      {/* ======== Experience Section END */}
     </>
   );
 }
