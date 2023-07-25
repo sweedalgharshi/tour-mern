@@ -8,11 +8,14 @@ import heroImg02 from "../assets/images/hero-img02.jpg";
 import heroVideo from "../assets/images/hero-video.mp4";
 import Subtitle from "../shared/Subtitle";
 import SearchBar from "../shared/SearchBar";
+import ServiceList from "../services/ServiceList";
+import FeaturedTourList from "../components/Featured-tour/FeaturedTourList";
 
 function Home() {
   return (
     <>
       <section>
+        {/* ======== Hero Section START */}
         <Container>
           <Row>
             <Col lg="6">
@@ -52,6 +55,35 @@ function Home() {
           </Row>
         </Container>
       </section>
+      {/* ======== Hero Section END */}
+
+      {/* ======== Service Section START */}
+      {/* ======== Service Section END */}
+      <section>
+        <Container>
+          <Row>
+            <Col lg="3">
+              <h5 className="services__subtitle">What we serve</h5>
+              <h2 className="services__title">We offer our best services</h2>
+            </Col>
+            <ServiceList />
+          </Row>
+        </Container>
+      </section>
+
+      {/* ======== Featured tour Section START */}
+      <section>
+        <Container>
+          <Row>
+            <Col lg="12" className="mb-5">
+              <Subtitle subtitle={"Explore"} />
+              <h2 className="featured__tour-title">Our featured tour</h2>
+            </Col>
+            <FeaturedTourList />
+          </Row>
+        </Container>
+      </section>
+      {/* ======== Featured tour Section END */}
     </>
   );
 }
