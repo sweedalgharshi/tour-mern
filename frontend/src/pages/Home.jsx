@@ -14,6 +14,7 @@ import ServiceList from "../services/ServiceList";
 import FeaturedTourList from "../components/Featured-tour/FeaturedTourList";
 
 import MasonryImageGallery from "../components/image-gallery/MasonryImageGallery";
+import Testimonials from "../components/testimonials/Testimonials";
 
 function Home() {
   return (
@@ -145,6 +146,22 @@ function Home() {
         </Container>
       </section>
       {/* ======== Gallery Section END */}
+
+      {/* ======== Testimonials Section START */}
+      <section>
+        <Container>
+          <Row>
+            <Col lg="12">
+              <Subtitle subtitle={"Fan Love"} />
+              <h2 className="testimonial__title">What our fans say about us</h2>
+            </Col>
+            <Col lg="12">
+              <Testimonials />
+            </Col>
+          </Row>
+        </Container>
+      </section>
+      {/* ======== Testimonials Section END */}
     </>
   );
 }
