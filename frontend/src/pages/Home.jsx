@@ -13,6 +13,8 @@ import SearchBar from "../shared/SearchBar";
 import ServiceList from "../services/ServiceList";
 import FeaturedTourList from "../components/Featured-tour/FeaturedTourList";
 
+import MasonryImageGallery from "../components/image-gallery/MasonryImageGallery";
+
 function Home() {
   return (
     <>
@@ -126,6 +128,23 @@ function Home() {
         </Container>
       </section>
       {/* ======== Experience Section END */}
+
+      {/* ======== Gallery Section START */}
+
+      <section>
+        <Container>
+          <Row>
+            <Col lg="12">
+              <Subtitle subtitle={"Gallery"} />
+              <h2 className="gallery__title">Visit our customers tour gallery</h2>
+            </Col>
+            <Col lg="12">
+              <MasonryImageGallery />
+            </Col>
+          </Row>
+        </Container>
+      </section>
+      {/* ======== Gallery Section END */}
     </>
   );
 }
