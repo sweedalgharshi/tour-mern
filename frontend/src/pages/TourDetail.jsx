@@ -7,6 +7,7 @@ import tourData from "../assets/data/tours";
 import calculateAvgRating from "../utils/avgRating";
 
 import avatar from "../assets/images/avatar.jpg";
+import Booking from "../components/Booking/Booking";
 
 function TourDetail() {
   const { id } = useParams();
@@ -45,7 +46,7 @@ function TourDetail() {
                 <div className="d-flex align-items-center gap-5">
                   <span className="d-flex align-items-center gap-1">
                     <i className="ri-star-s-fill" style={{ color: "var(--secondary-color)" }}></i>
-                    {calculateAvgRating === 0 ? null : avgRating}
+                    {avgRating === 0 ? null : avgRating}
                     {totalRating === 0 ? "Not Rated" : <span>({reviews.length})</span>}
                   </span>
 
@@ -135,7 +136,9 @@ function TourDetail() {
             </div>
           </Col>
 
-          <Col lg="4"></Col>
+          <Col lg="4">
+            <Booking tour={tour} avgRating={avgRating} />
+          </Col>
         </Row>
       </Container>
     </section>
