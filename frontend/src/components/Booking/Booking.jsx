@@ -2,8 +2,12 @@ import "./booking.css";
 import { useState } from "react";
 import { Form, FormGroup, ListGroup, ListGroupItem, Button } from "reactstrap";
 
+import { useNavigate } from "react-router-dom";
+
 function Booking({ tour, avgRating }) {
   const { price, reviews } = tour;
+  const navigate = useNavigate();
+
   const [credentials, setCredentials] = useState({
     userId: "01",
     userEmail: "abc@gmail.com",
@@ -15,6 +19,15 @@ function Booking({ tour, avgRating }) {
 
   const handleChange = (e) => {
     setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
+  };
+
+  const serviceFee = 10;
+  const totalAmount = Number(price) * Number(credentials.guestSize) + Number(serviceFee);
+
+  const handleClick = (e) => {
+    e.preventDefault();
+
+    navigate("/thank-you");
   };
   return (
     <div className="booking">
@@ -31,7 +44,7 @@ function Booking({ tour, avgRating }) {
       {/*  ================= Booking Form */}
       <div className="booking__form">
         <h5>Information</h5>
-        <Form className="booking__info-form">
+        <Form className="booking__info-form" onSubmit={handleClick}>
           <FormGroup>
             <input
               type="text"
@@ -75,15 +88,17 @@ function Booking({ tour, avgRating }) {
           </ListGroupItem>
           <ListGroupItem className="border-0 px-0">
             <h5>Service Charge</h5>
-            <span>$10</span>
+            <span>${serviceFee}</span>
           </ListGroupItem>
           <ListGroupItem className="border-0 px-0 total">
             <h5>Total</h5>
-            <span>$109</span>
+            <span>${totalAmount}</span>
           </ListGroupItem>
         </ListGroup>
 
-        <Button className="btn primary__btn w-100 mt-4">Book Now</Button>
+        <Button className="btn primary__btn w-100 mt-4" onClick={handleClick}>
+          Book Now
+        </Button>
       </div>
     </div>
   );
