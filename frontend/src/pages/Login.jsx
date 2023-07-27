@@ -39,7 +39,7 @@ function Login() {
                 <Form onClick={handleClick}>
                   <FormGroup>
                     <input
-                      type="text"
+                      type="email"
                       placeholder="Email"
                       required
                       id="email"
