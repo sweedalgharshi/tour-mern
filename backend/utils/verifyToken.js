@@ -10,11 +10,9 @@ const verifyToken = (req, res, next) => {
     });
   }
 
-  console.log(req.user);
-
   // if token exist then verify the token
 
-  jwt.verify(token, process.env.JWT_SECRET_KET, (err, user) => {
+  jwt.verify(token, process.env.JWT_SECRET_KEY, (err, user) => {
     if (err) {
       return res.status(401).json({
         success: false,
@@ -23,11 +21,12 @@ const verifyToken = (req, res, next) => {
     }
 
     req.user = user;
+    console.log(req.user);
     next(); // don't forget to call next()
   });
 };
 
-export const verifyUser = (req, res) => {
+export const verifyUser = (req, res, next) => {
   verifyToken(req, res, next, () => {
     if (req.user.id === req.params.id || req.user.role === "admin") {
       next();
@@ -40,7 +39,7 @@ export const verifyUser = (req, res) => {
   });
 };
 
-export const verifyAdmin = (req, res) => {
+export const verifyAdmin = (req, res, next) => {
   verifyToken(req, res, next, () => {
     if (req.user.role === "admin") {
       next();
